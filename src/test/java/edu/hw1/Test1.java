@@ -5,7 +5,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class Test1 {
     @Test
-    void simple() {
+    void basicTest() {
         String time = "15:59";
         int seconds = Task1.minutesToSeconds(time);
         assertThat(seconds)

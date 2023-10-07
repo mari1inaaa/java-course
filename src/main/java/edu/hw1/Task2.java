@@ -1,12 +1,19 @@
 package edu.hw1;
 
 public class Task2 {
-    public static int countDigits(int number) {
+    private Task2() {
+
+    }
+
+    @SuppressWarnings("Magic Number")
+    public static int countDigits(int numToCount) {
+        final int TEN = 10;
         int count = 0;
+        int numToDiv = numToCount;
         do {
             count++;
-            number /= 10;
-        } while (number != 0);
+            numToDiv /= TEN;
+        } while (numToDiv != 0);
         return count;
     }
 }
