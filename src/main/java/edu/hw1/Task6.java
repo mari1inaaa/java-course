@@ -1,14 +1,14 @@
 package edu.hw1;
 
-import java.util.Collections;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Task6 {
     private Task6() {
 
     }
 
-    public static int arrToNum(Integer[] arr){
+    public static int arrToNum(Integer[] arr) {
         StringBuilder sb = new StringBuilder();
         for (int digit : arr) {
             sb.append(digit);
@@ -18,21 +18,25 @@ public class Task6 {
     }
 
     private static int count = 1;
-    @SuppressWarnings("Magic Number")
+
     public static int countK(int number) {
-        Integer[] increasingArr = new Integer[4];
-        Integer[] decreasingArr = new Integer[4];
-        for (int i = 0; i < 4; i++) {
-            increasingArr[i] = number % 10;
-            number /= 10;
+        final int NUM_L = 4;
+        Integer[] increasingArr = new Integer[NUM_L];
+        Integer[] decreasingArr = new Integer[NUM_L];
+        final int TEN = 10;
+        int numToDiv = number;
+        for (int i = 0; i < NUM_L; i++) {
+            increasingArr[i] = numToDiv % TEN;
+            numToDiv /= TEN;
         }
-        System.arraycopy(increasingArr, 0, decreasingArr, 0, 4);
+        System.arraycopy(increasingArr, 0, decreasingArr, 0, NUM_L);
         Arrays.sort(increasingArr);
         Arrays.sort(decreasingArr, Collections.reverseOrder());
         int increasingNum = arrToNum(increasingArr);
         int decreasingNum = arrToNum(decreasingArr);
         int difference = decreasingNum - increasingNum;
-        if (difference != 6174) {
+        final int KAP = 6174;
+        if (difference != KAP) {
             count++;
             return countK(difference);
         } else {
