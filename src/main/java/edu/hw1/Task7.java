@@ -5,18 +5,14 @@ public class Task7 {
 
     }
 
-    public static int[] intToArrBin(int n) {
+    public static char[] intToArrBin(int n) {
         String bin = Integer.toBinaryString(n);
-        int[] arr = new int[bin.length()];
-        for (int i = 0; i < bin.length(); i++) {
-            arr[i] = Character.getNumericValue(bin.charAt(i));
-        }
-        return arr;
+        return bin.toCharArray();
     }
 
-    public static int arrToBit(int[] arr) {
+    public static int arrToBit(char[] array) {
         StringBuilder sb = new StringBuilder();
-        for (int digit : arr) {
+        for (char digit : array) {
             sb.append(digit);
         }
         String binString = sb.toString();
@@ -24,26 +20,28 @@ public class Task7 {
     }
 
     public static int rotateLeft(int n, int shift) {
-        int[] arr = intToArrBin(n);
-        int[] rotatedArr = new int[arr.length];
-        for (int i = 0; i < arr.length; i++) {
-            if (arr.length > i + shift) {
-                rotatedArr[i] = arr[i + shift];
+        char[] array = intToArrBin(n);
+        char[] rotatedArr = new char[array.length];
+        for (int i = 0; i < array.length; i++) {
+            int index = (i + shift) % array.length;
+            if (array.length > index) {
+                rotatedArr[i] = array[index];
             } else {
-                rotatedArr[i] = arr[Math.abs(arr.length - i - shift)];
+                rotatedArr[i] = array[Math.abs(array.length - index)];
             }
         }
         return arrToBit(rotatedArr);
     }
 
     public static int rotateRight(int n, int shift) {
-        int[] arr = intToArrBin(n);
-        int[] rotatedArr = new int[arr.length];
-        for (int i = 0; i < arr.length; i++) {
-            if (i - shift >= 0) {
-                rotatedArr[i] = arr[i - shift];
+        char[] array = intToArrBin(n);
+        char[] rotatedArr = new char[array.length];
+        for (int i = 0; i < array.length; i++) {
+            int index = (i - shift) % array.length;
+            if (index >= 0) {
+                rotatedArr[i] = array[index];
             } else {
-                rotatedArr[i] = arr[arr.length + i - shift];
+                rotatedArr[i] = array[array.length + index];
             }
         }
         return arrToBit(rotatedArr);

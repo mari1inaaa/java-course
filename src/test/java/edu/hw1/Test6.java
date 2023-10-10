@@ -7,7 +7,7 @@ public class Test6 {
     @Test
     void basicTest() {
         int number = 6621;
-        int k = Task6.countK(number);
+        int k = Task6.countK(number, 1);
         assertThat(k)
             .isEqualTo(5);
     }

@@ -5,7 +5,7 @@ public class Task5 {
 
     }
 
-    public static boolean isPalindrome(int[] digits) {
+    private static boolean isPalindrome(int[] digits) {
         for (int i = 0; i < (digits.length / 2); i++) {
             if (digits[i] != digits[digits.length - 1 - i]) {
                 return false;
@@ -14,7 +14,7 @@ public class Task5 {
         return true;
     }
 
-    public static int[] transformArray(int[] arr) {
+    private static int[] transformArray(int[] arr) {
         StringBuilder sb = new StringBuilder();
 
         for (int num : arr) {
@@ -31,7 +31,7 @@ public class Task5 {
         return transformedDigits;
     }
 
-    public static int[] descendant(int[] digits) {
+    private static int[] descendant(int[] digits) {
         int[] descendantDigits = new int[digits.length / 2];
         for (int i = 0, j = 0; i < digits.length / 2; i++, j++) {
             descendantDigits[i] = digits[i + j] + digits[i + 1 + j];

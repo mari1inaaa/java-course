@@ -45,4 +45,22 @@ public class Test3 {
         assertThat(isNestable)
             .isEqualTo(false);
     }
+
+    @Test
+    void empty() {
+        int[] arr1 = {};
+        int[] arr2 = {0, 3, 9};
+        boolean isNestable = Task3.isNestable(arr1, arr2);
+        assertThat(isNestable)
+            .isEqualTo(false);
+    }
+
+    @Test
+    void nullA() {
+        int[] arr1 = null;
+        int[] arr2 = {0, 3, 9};
+        boolean isNestable = Task3.isNestable(arr1, arr2);
+        assertThat(isNestable)
+            .isEqualTo(false);
+    }
 }

@@ -5,10 +5,10 @@ public class Task8 {
 
     }
 
-    @SuppressWarnings("Magic Number")
+    static final int[][] moves = {{-2, -1}, {-2, 1}, {2, 1}, {2, -1}, {1, 2}, {1, -2}, {-1, 2}, {-1, -2}};
+
     public static boolean knightBoardCapture(int[][] board) {
-        final int M = -2;
-        int[][] moves = {{M, -1}, {M, 1}, {2, 1}, {2, -1}, {1, 2}, {1, M}, {-1, 2}, {-1, M}};
+
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board.length; j++) {
                 if (board[i][j] == 1) {

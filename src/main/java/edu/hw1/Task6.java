@@ -8,7 +8,7 @@ public class Task6 {
 
     }
 
-    public static int arrToNum(Integer[] arr) {
+    private static int arrToNum(Integer[] arr) {
         StringBuilder sb = new StringBuilder();
         for (int digit : arr) {
             sb.append(digit);
@@ -17,13 +17,14 @@ public class Task6 {
         return Integer.parseInt(numberString);
     }
 
-    private static int count = 1;
+    static final int NUM_L = 4;
+    static final int TEN = 10;
+    static final int KAP = 6174;
 
-    public static int countK(int number) {
-        final int NUM_L = 4;
+    public static int countK(int number, int count) {
         Integer[] increasingArr = new Integer[NUM_L];
         Integer[] decreasingArr = new Integer[NUM_L];
-        final int TEN = 10;
+
         int numToDiv = number;
         for (int i = 0; i < NUM_L; i++) {
             increasingArr[i] = numToDiv % TEN;
@@ -35,10 +36,10 @@ public class Task6 {
         int increasingNum = arrToNum(increasingArr);
         int decreasingNum = arrToNum(decreasingArr);
         int difference = decreasingNum - increasingNum;
-        final int KAP = 6174;
+
         if (difference != KAP) {
             count++;
-            return countK(difference);
+            return countK(difference, count);
         } else {
             return count;
         }

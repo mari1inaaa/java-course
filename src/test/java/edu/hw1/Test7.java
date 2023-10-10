@@ -21,4 +21,22 @@ public class Test7 {
         assertThat(rotated)
             .isEqualTo(Integer.parseInt("00110", 2));
     }
+
+    @Test
+    void maxValueRight() {
+        int n = 42;
+        int shift = Integer.MAX_VALUE;
+        int rotated = Task7.rotateRight(n, shift);
+        assertThat(rotated)
+            .isEqualTo(Integer.parseInt("010101", 2));
+    }
+
+    @Test
+    void maxValueLeft () {
+        int n = Integer.MAX_VALUE;
+        int shift = 21;
+        int rotated = Task7.rotateLeft(n, shift);
+        assertThat(rotated)
+            .isEqualTo(Integer.parseInt(Integer.toBinaryString(Integer.MAX_VALUE), 2));
+    }
 }

@@ -27,4 +27,20 @@ public class Test1 {
         assertThat(seconds)
             .isEqualTo(-1);
     }
+
+    @Test
+    void letterInString() {
+        String time = "mm:23";
+        int seconds = Task1.minutesToSeconds(time);
+        assertThat(seconds)
+            .isEqualTo(-1);
+    }
+
+    @Test
+    void maxValue() {
+        String time = Integer.MAX_VALUE + ":00";
+        int seconds = Task1.minutesToSeconds(time);
+        assertThat(seconds)
+            .isEqualTo(-1);
+    }
 }

@@ -5,9 +5,8 @@ public class Task2 {
 
     }
 
-    @SuppressWarnings("Magic Number")
+    static final int TEN = 10;
     public static int countDigits(int numToCount) {
-        final int TEN = 10;
         int count = 0;
         int numToDiv = numToCount;
         do {
