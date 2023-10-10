@@ -6,14 +6,16 @@ public class Task1 {
     }
 
     static final int SEC_IN_MIN = 60;
+
     private static boolean isValidFormat(String[] time) {
         for (String i : time) {
-            if (!i.matches("\\d+")){
+            if (!i.matches("\\d+")) {
                 return false;
             }
         }
         return true;
     }
+
     public static int minutesToSeconds(String time) {
         String[] minutesSeconds = time.split(":");
         if (minutesSeconds.length != 2 || !isValidFormat(minutesSeconds)) {

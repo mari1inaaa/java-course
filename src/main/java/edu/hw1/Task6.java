@@ -22,6 +22,7 @@ public class Task6 {
     static final int KAP = 6174;
 
     public static int countK(int number, int count) {
+        int copyCount = count;
         Integer[] increasingArr = new Integer[NUM_L];
         Integer[] decreasingArr = new Integer[NUM_L];
 
@@ -38,10 +39,10 @@ public class Task6 {
         int difference = decreasingNum - increasingNum;
 
         if (difference != KAP) {
-            count++;
-            return countK(difference, count);
+            copyCount++;
+            return countK(difference, copyCount);
         } else {
-            return count;
+            return copyCount;
         }
     }
 }
