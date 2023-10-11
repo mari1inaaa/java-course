@@ -8,6 +8,10 @@ public class Task6 {
 
     }
 
+    private static final int NUM_L = 4;
+    private static final int TEN = 10;
+    private static final int KAP = 6174;
+
     private static int arrToNum(Integer[] arr) {
         StringBuilder sb = new StringBuilder();
         for (int digit : arr) {
@@ -17,11 +21,7 @@ public class Task6 {
         return Integer.parseInt(numberString);
     }
 
-    static final int NUM_L = 4;
-    static final int TEN = 10;
-    static final int KAP = 6174;
-
-    public static int countK(int number, int count) {
+    private static int countK(int number, int count) {
         int copyCount = count;
         Integer[] increasingArr = new Integer[NUM_L];
         Integer[] decreasingArr = new Integer[NUM_L];
@@ -44,5 +44,9 @@ public class Task6 {
         } else {
             return copyCount;
         }
+    }
+
+    public static int countKap(int n) {
+        return countK(n, 1);
     }
 }

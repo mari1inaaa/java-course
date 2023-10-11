@@ -5,7 +5,7 @@ public class Task2 {
 
     }
 
-    static final int TEN = 10;
+    private static final int TEN = 10;
 
     public static int countDigits(int numToCount) {
         int count = 0;

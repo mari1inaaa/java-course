@@ -5,7 +5,7 @@ public class Task8 {
 
     }
 
-    static final int[][] MOVES = {{-2, -1}, {-2, 1}, {2, 1}, {2, -1}, {1, 2}, {1, -2}, {-1, 2}, {-1, -2}};
+    private static final int[][] MOVES = {{-2, -1}, {-2, 1}, {2, 1}, {2, -1}, {1, 2}, {1, -2}, {-1, 2}, {-1, -2}};
 
     public static boolean knightBoardCapture(int[][] board) {
 

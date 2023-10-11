@@ -5,7 +5,7 @@ public class Task1 {
 
     }
 
-    static final int SEC_IN_MIN = 60;
+    private static final int SEC_IN_MIN = 60;
 
     private static boolean isValidFormat(String[] time) {
         for (String i : time) {
