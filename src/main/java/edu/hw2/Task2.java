@@ -34,13 +34,11 @@ public class Task2 {
         }
 
         @Override final void setWidth(int width) {
-            super.setHeight(width);
             super.setWidth(width);
         }
 
         @Override final void setHeight(int height) {
             super.setHeight(height);
-            super.setWidth(height);
         }
     }
 }
