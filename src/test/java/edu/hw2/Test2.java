@@ -19,6 +19,7 @@ public class Test2 {
         Square square = new Square(0);
         //assertThat(square.area()).isEqualTo(225);
         square.setWidth(20);
+        square.setHeight(20);
         assertThat(square.area()).isEqualTo(400);
     }
 
