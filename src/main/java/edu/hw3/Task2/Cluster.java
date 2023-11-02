@@ -1,6 +1,7 @@
 package edu.hw3.Task2;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class Cluster {
@@ -8,8 +9,8 @@ public class Cluster {
 
     }
 
-    public static ArrayList<String> clusterize(String string) {
-        ArrayList<String> clasters = new ArrayList<>();
+    public static List<String> clusterize(String string) {
+        List<String> clasters = new ArrayList<>();
         Stack<Character> stack = new Stack<>();
         int first = 0;
         for (int i = 0; i < string.length(); i++) {
